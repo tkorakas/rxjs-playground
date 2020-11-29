@@ -7,6 +7,6 @@ const mouseUp$ = fromEvent(document, "mouseup");
 
 mouseDown$
     .pipe(switchMap(() => mouseMove$.pipe(takeUntil(mouseUp$), pluck("clientX"))))
-    .subscribe((x: number) => {
+    .subscribe((x) => {
         console.log(x);
     });
